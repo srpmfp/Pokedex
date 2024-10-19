@@ -9,20 +9,20 @@
          { name: 'Squirtle', height: 0.5, types: ['Water'] }
      ];  
     
-     //////////////////////////// 
+     /////////////add new function/////////////// 
      
      function add(pokemon) {
         pokemonList.push(pokemon);
      }
      
-    ////////////////////////////
+    /////////////return all///////////////
     
      function getAll() {
         return pokemonList;
      }
 
 
-    //////////////////////////// 
+    ////////////functions call//////////////// 
      return {
          getAll: getAll,
          add: add
