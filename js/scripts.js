@@ -30,9 +30,6 @@
      
 })()
 
-
-// 
-
 function listBig(pokemon) {
   
     // heights greater than .5 less than .7
@@ -48,4 +45,5 @@ function listBig(pokemon) {
         return document.write(" " + pokemon.name + " (Height " + pokemon.height + ")-Wow, you are so big!!");
     }
 }
+
 pokemonRepository.getAll().forEach(listBig);
