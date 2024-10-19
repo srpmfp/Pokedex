@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.pokedex {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: fit-content;
+    text-align: center;
+    background-color: beige;
+}
+
+.pokemon {
+    display: block;
+    list-style: none;
+}
+
+.pokemonSelect {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.pokeButton {
+
+    background-color: rgba(127, 255, 212, 0.445);
+    width: fit-content;
+    margin: .2em;
+    min-width: 20vb;
+}
