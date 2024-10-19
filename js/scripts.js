@@ -1,23 +1,51 @@
-const bulbasaur = { name: 'Bulbasaur', height: 0.7, types: ['Grass', 'Poison'] };
-const charmander = { name: 'Charmander', height: 0.6, types: ['fire'] };
-const squirtle = { name: 'Squirtle', height: 0.5, types: ['Water'] };
-const pokemonList = [bulbasaur, charmander, squirtle];
 
-//listing out the name and height of the pokemon in the pokemonList 
-for (let i = 0; i < pokemonList.length; i++){
+
+ let pokemonRepository = (function () {
     
+     //list of manually uploaded pokemon
+    let pokemonList = [
+         { name: 'Bulbasaur', height: 0.7, types: ['Grass', 'Poison'] },
+         { name: 'Charmander', height: 0.6, types: ['fire'] },
+         { name: 'Squirtle', height: 0.5, types: ['Water'] }
+     ];  
+    
+     //////////////////////////// 
+     
+     function add(pokemon) {
+        pokemonList.push(pokemon);
+     }
+     
+    ////////////////////////////
+    
+     function getAll() {
+        return pokemonList;
+     }
+
+
+    //////////////////////////// 
+     return {
+         getAll: getAll,
+         add: add
+     }
+     
+})()
+
+
+// 
+
+function listBig(pokemon) {
+  
     // heights greater than .5 less than .7
-    if (pokemonList[i].height > 0.5 && pokemonList[i].height < 0.7) {
-        document.write("<br>" + pokemonList[i].name + " (Height " + pokemonList[i].height + ")");
+    if (pokemon.height > 0.5 && pokemon.height < 0.7) {
+        return document.write("<br>" + pokemon.name + " (Height " + pokemon.height + ")");
     }
     // heights less than or equal to .5
-    else if (pokemonList[i].height <= 0.5) {
-        document.write("<br> " + pokemonList[i].name + " (Height " + pokemonList[i].height + "). ");
+    else if (pokemon.height <= 0.5) {
+        return document.write("<br>" + pokemon.name + " (Height " + pokemon.height + ")");
     }
     // heights greater than 0.6
-    else if (pokemonList[i].height > 0.6) {
-        document.write(" " + pokemonList[i].name + " (Height " + pokemonList[i].height + ")-Wow, you are so big!!");
+    else if (pokemon.height > 0.6) {
+        return document.write(" " + pokemon.name + " (Height " + pokemon.height + ")-Wow, you are so big!!");
     }
-
 }
-
+pokemonRepository.getAll().forEach(listBig);
