@@ -9,7 +9,15 @@ let pokemonRepository = (function () {
         { name: 'Squirtle', height: 0.5, types: ['Water'] }
     ];
 
-    /////////////List Out Pokemon/////////////// 
+    /////////////List Out Pokemon///////////////
+
+    // function addListener(target, pokeObject) {
+    //     let buttonSelect = document.querySelector('.pokebutton');
+    //     buttonSelect.addEventListener('clicked', function (event) {
+    //         let target = event.target;
+    //         return 
+    //     })
+    // }
 
     function addListItem(pokemon) {
         // ul pokemon list selector
@@ -23,12 +31,11 @@ let pokemonRepository = (function () {
 
 
         // individual list item selector
-        let pokeSelect = document.querySelector('.pokemon');
+        // let pokeSelect = document.querySelector('.pokemon');
 
         //adds button to lI
         createButton.addEventListener('click', function (event) {
-            let target = event.target;
-            return showDetails(pokemon);
+            return showDetails(pokemon.name);
         });
 
         createButton.innerText = pokemon.name;
@@ -61,6 +68,7 @@ let pokemonRepository = (function () {
         getAll: getAll,
         showDetails: showDetails,
         addListItem: addListItem
+        // addListener: addlistener
     }
 
 })()
@@ -72,4 +80,6 @@ function listPokemon(pokemon) {
 
 pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
+    // pokemonRepository.addListener(addListItem, pokemon);
+
 });
