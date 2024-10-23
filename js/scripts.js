@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
 
         //adds button to lI
         createButton.addEventListener('click', function (event) {
-            return showDetails(pokemon.name);
+            return showDetails(pokemon);
         });
 
         createButton.innerText = pokemon.name;
@@ -52,7 +52,7 @@ let pokemonRepository = (function () {
     }
 
     function showDetails(pokemon) {
-        console.log(pokemon);
+        console.log(pokemon.name);
     }
 
 
