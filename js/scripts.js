@@ -38,8 +38,10 @@ let pokemonRepository = (function () {
             return showDetails(pokemon);
         })
 
+        // adds pokemon name to the button
         createButton.innerText = pokemon.name;
         createButton.classList.add('pokeButton');
+        //adds button to chart
         createLi.appendChild(createButton);
 
 
@@ -51,6 +53,7 @@ let pokemonRepository = (function () {
 
     }
 
+    // after selecting button--shows further detail on pokemon
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function () {
             console.log(item);
@@ -88,12 +91,12 @@ let pokemonRepository = (function () {
 
         })
     }
-    // callback to get details
+    // callback to get details on specific pokemon
 
     function loadDetails(item) {
 
 
-        let url = item.url;
+        let url = item.url; // url for that Pokemon's specific information
         return fetch(url).then(function (response) {
 
             return response.json();
@@ -122,12 +125,12 @@ let pokemonRepository = (function () {
         loadDetails: loadDetails,
         loadList: loadList
 
-
     }
 
 })()
 
 
+// loads the pokemon into the table
 pokemonRepository.loadList().then(function (pokemon) {
 
     pokemonRepository.getAll().forEach(function (pokemon) {
