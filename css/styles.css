@@ -15,12 +15,15 @@
 .pokemon {
     display: block;
     list-style: none;
+
 }
 
 .pokemonSelect {
     display: flex;
     flex-direction: column;
-
+    flex-wrap: wrap;
+    width: fit-content;
+    max-height: 75vh;
 }
 
 .pokeButton {
@@ -28,5 +31,5 @@
     background-color: rgba(127, 255, 212, 0.445);
     width: fit-content;
     margin: .2em;
-    min-width: 20vb;
+    min-width: 10vb;
 }
