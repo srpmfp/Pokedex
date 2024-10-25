@@ -9,14 +9,8 @@ let pokemonRepository = (function () {
 
 
     function add(pokemon) {
-        // if (
-        //     typeof pokemon === "object"
-        // ) {
-        pokemonList.push(pokemon);
 
-        // } else {
-        //     console.log("Pokemon not correct")
-        // }
+        pokemonList.push(pokemon);
     }
 
 
@@ -35,7 +29,7 @@ let pokemonRepository = (function () {
 
         //adds button to lI
         createButton.addEventListener('click', function () {
-            return showDetails(pokemon);
+            showDetails(pokemon);
         })
 
         // adds pokemon name to the button
@@ -55,7 +49,7 @@ let pokemonRepository = (function () {
 
     // after selecting button--shows further detail on pokemon
     function showDetails(item) {
-        pokemonRepository.loadDetails(item).then(function () {
+        loadDetails(item).then(function () {
             console.log(item);
         });
     }
