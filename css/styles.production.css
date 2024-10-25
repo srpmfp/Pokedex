@@ -1,0 +1,96 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.pokedex {
+    border: 2px solid black;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-align: center;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(239, 235, 36.6)), color-stop(rgb(60, 90, 238, .6)), to(rgb(60, 90, 238, .6)));
+    background-image: -o-linear-gradient(rgb(239, 235, 36.6), rgb(60, 90, 238, .6), rgb(60, 90, 238, .6));
+    background-image: linear-gradient(rgb(239, 235, 36.6), rgb(60, 90, 238, .6), rgb(60, 90, 238, .6));
+    overflow-x: scroll;
+}
+
+.pokemon {
+    display: block;
+    list-style: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+.pokemonSelect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 2%;
+    max-height: 75vh;
+}
+
+.pokeButton {
+
+    background-color: rgba(127, 255, 212, 0.445);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: .2em;
+    border-radius: 20px;
+    border: 2px inset linear-gradient(left white, rgba(0, 0, 0, 0.283));
+    min-width: 10em;
+    min-height: 2em;
+    -webkit-box-shadow: 2px 5px black;
+    box-shadow: 2px 5px black;
+
+}
+
+@media all and (max-width:615px) {
+    .pokeButton {
+        font-size: 16px;
+        width: 100%;
+        min-width: 18em;
+        max-width: 18em;
+        min-height: 4em;
+
+    }
+
+    .pokedexTitle {
+        position: relative;
+    }
+
+    .pokedex {
+
+        max-width: 400px;
+
+    }
+
+    .pokemonSelect {
+        flex-direction: row;
+        margin: 30% auto 0 auto;
+        width: 300px;
+        overflow-y: scroll;
+    }
+
+}

@@ -1,35 +1,83 @@
+:root {
+    --background1: rgb(60, 90, 238, .6);
+    --background2: rgb(239, 235, 36.6);
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
 }
 
 .pokedex {
-    display: flex;
-    flex-direction: column;
     border: 2px solid black;
     width: fit-content;
     text-align: center;
-    background-color: beige;
+    background-image: linear-gradient(var(--background2), var(--background1), var(--background1));
+    overflow-x: scroll;
 }
 
 .pokemon {
     display: block;
     list-style: none;
-
+    width: fit-content;
+    align-content: center;
 }
 
 .pokemonSelect {
     display: flex;
     flex-direction: column;
+
     flex-wrap: wrap;
-    width: fit-content;
+    width: 100%;
+    margin-top: 2%;
     max-height: 75vh;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(63, 63, 63, 0.475);
 }
 
 .pokeButton {
 
-    background-color: rgba(127, 255, 212, 0.445);
+    background-color: rgba(127, 255, 212, 0.70);
     width: fit-content;
     margin: .2em;
-    min-width: 10vb;
+    border-radius: 20px;
+    border: 2px inset linear-gradient(left white, rgba(0, 0, 0, 0.283));
+    min-width: 10em;
+    min-height: 2em;
+    box-shadow: 2px 5px black;
+
+}
+
+@media all and (max-width:615px) {
+    .pokeButton {
+        font-size: 16px;
+        width: 100%;
+        min-width: 18em;
+        max-width: 18em;
+        min-height: 4em;
+
+    }
+
+    .pokedexTitle {
+        position: relative;
+    }
+
+    .pokedex {
+
+        max-width: 400px;
+
+    }
+
+    .pokemonSelect {
+        margin: 30% auto 0 auto;
+        flex-direction: row;
+        width: 300px;
+        overflow-y: scroll;
+
+    }
+
 }
