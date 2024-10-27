@@ -139,7 +139,7 @@ main {
     flex-direction: row;
     margin: auto;
     height: 30vh;
-    width: 100vw;
+    width: fit-content;
 
 }
 

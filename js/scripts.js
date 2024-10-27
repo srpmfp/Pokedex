@@ -112,6 +112,14 @@ let pokemonRepository = (function () {
 
         })
 
+
+        background.addEventListener('click', function (e) {
+            if (e.target === background) {
+                closeModal();
+            }
+
+        })
+
         // Append all information
         modal.appendChild(title);
         modal.appendChild(image);
