@@ -7,12 +7,10 @@ let pokemonRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 
-
     function add(pokemon) {
 
         pokemonList.push(pokemon);
     }
-
 
 
     function addListItem(pokemon) {
@@ -29,9 +27,16 @@ let pokemonRepository = (function () {
 
         //adds button to lI
         createButton.addEventListener('click', function () {
-            showDetails(pokemon);
-        })
 
+            if (document.querySelector('#modal-container').classList.contains('is-not-visible')) {
+
+                showDetails(pokemon);
+            }
+        })
+        window.addEventListener('keydown', function (e) {
+            if (e.key === 'Spacebar' && modalContainer.classList.contains('is-not-visible'))
+                showModal();
+        })
         // adds pokemon name to the button
         createButton.innerText = pokemon.name;
         createButton.classList.add('pokeButton');
@@ -47,11 +52,90 @@ let pokemonRepository = (function () {
 
     }
 
+    function closeModal() {
+
+        let modalContainer = document.querySelector('#modal-container')
+        let modal = document.querySelector('#modal')
+        let background = document.querySelector('#background')
+
+
+        // close modal
+        modalContainer.classList.remove('is-visible')
+        modalContainer.classList.add('is-not-visible')
+        modal.innerHTML = ''; //clears contents
+        // close background
+        background.classList.remove('is-visible')
+        background.classList.add('is-not-visible')
+
+    }
+
+    function showModal(nameModal, imageModal, heightModal) {
+
+
+        // background selector
+        let background = document.querySelector('#background')
+
+        // modalcontainer  select
+        let modalContainer = document.querySelector('#modal-container');
+
+        // close modal    
+        let modal = document.querySelector('#modal');
+
+
+        // adding pokemon name to modal
+        let title = document.createElement('div');
+        title.innerText = nameModal;
+        title.id = "modal-title";
+
+        let height = document.createElement('p');
+        height.innerText = 'Height: ' + heightModal;
+        height.id = "modal-title";
+
+        //adding pokemon image
+        let image = document.createElement('img');
+        image.src = imageModal
+
+        // adding close button 
+        let close = document.createElement('button');
+        // adding close function
+        close.addEventListener('click', function (e) {
+            closeModal();
+        })
+        close.innerText = 'X';
+        close.id = 'modalClose-btn'
+
+        // adds escape listener
+        window.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+                closeModal();
+            }
+
+        })
+
+        // Append all information
+        modal.appendChild(title);
+        modal.appendChild(image);
+        modal.appendChild(height);
+        modal.appendChild(close);
+
+
+        //Removes not visible class & adds the is-visible class
+        modalContainer.classList.remove('is-not-visible')
+        modalContainer.classList.add('is-visible')
+
+        background.classList.remove('is-not-visible')
+        background.classList.add('is-visible')
+
+    };
+
     // after selecting button--shows further detail on pokemon
     function showDetails(item) {
         loadDetails(item).then(function () {
-            console.log(item);
-        });
+            let imageModal = item.imageUrl;
+            let nameModal = item.name;
+            let heightModal = item.height;
+            showModal(nameModal, imageModal, heightModal);
+        })
     }
 
 
@@ -109,7 +193,7 @@ let pokemonRepository = (function () {
         })
     }
 
-    ////////////functions call//////////////// 
+    ////////////functions//////////////// 
     return {
 
         add: add,
@@ -117,11 +201,13 @@ let pokemonRepository = (function () {
         showDetails: showDetails,
         addListItem: addListItem,
         loadDetails: loadDetails,
-        loadList: loadList
+        loadList: loadList,
+        showModal: showModal
 
     }
 
 })()
+
 
 
 // loads the pokemon into the table

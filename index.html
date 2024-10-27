@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sean's Poke Page</title>
     <link rel="stylesheet" href="css/styles.production.css">
 </head>
 <body>
-    <main>
+    
+     <main>   
+        <div id="background" class="is-not-visible"></div>
+        <!-- display selected pokemon in modal -->
+        <div id="modal-container" class="is-not-visible">
+        <div id="modal"> </div>
+        </div>
         <!-- Pokemon List container -->
         <div class="pokedex">
             
@@ -20,6 +26,7 @@
             
             
         </div>
+        
     </main>
     <script type="module" src="js/promise-polyfill.js"></script>
     <script type="module" src="js/fetch-polyfill.js"></script>
