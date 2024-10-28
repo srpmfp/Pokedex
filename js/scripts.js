@@ -83,7 +83,7 @@ let pokemonRepository = (function () {
 
 
         // adding pokemon name to modal
-        let title = document.createElement('div');
+        let title = document.createElement('p');
         title.innerText = nameModal;
         title.id = "modal-title";
 

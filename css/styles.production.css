@@ -11,6 +11,13 @@
     padding: 0;
 }
 
+/* .oswald-<uniquifier> {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+} */
+
 main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -32,6 +39,13 @@ main {
     background-image: -o-linear-gradient(rgb(239, 235, 36.6), rgba(60, 90, 238, 0.571), rgba(60, 90, 238, 0.571));
     background-image: linear-gradient(rgb(239, 235, 36.6), rgba(60, 90, 238, 0.571), rgba(60, 90, 238, 0.571));
     overflow-x: scroll;
+
+    & .pokedexTitle {
+        font-family: "Oswald", sans-serif;
+        font-size: x-large;
+        font-weight: 600;
+        text-shadow: 2px 4px rgba(128, 128, 128, 0.169);
+    }
 }
 
 .pokemon {
@@ -89,6 +103,11 @@ main {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    font-stretch: expanded;
+    text-transform: initial;
     margin: .2em;
     border-radius: 20px;
     border: 2px inset linear-gradient(left white, rgba(0, 0, 0, 0.283));
@@ -99,6 +118,9 @@ main {
 
 }
 
+.pokeButton:hover {
+    border-color: white;
+}
 
 #modal-container {
     display: none;
@@ -130,16 +152,23 @@ main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: horizontal;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
     margin: auto;
-    height: 30vh;
-    width: fit-content;
+    width: 200px;
+
+    & p {
+        padding: 0;
+        margin: 0;
+        font-family: "Oswald", sans-serif;
+    }
+
 
 }
 
