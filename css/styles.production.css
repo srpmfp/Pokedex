@@ -82,7 +82,6 @@ main {
     width: 100vw;
     height: 100vh;
     background-color: #00000080;
-    border-radius: 10%;
 }
 
 #background.is-not-visible {
@@ -124,7 +123,7 @@ main {
 
 #modal-container {
     display: none;
-    background-color: rgb(171, 184, 116);
+    background-color: rgb(77, 82, 52);
     top: 10%;
     width: -webkit-fit-content;
     width: -moz-fit-content;
