@@ -24,7 +24,7 @@ let pokemonRepository = (function () {
 
         //  create new button element with BS classes for toggling modal
         let createButton = document.createElement('button');
-        $(createButton).addClass('btn bg-success text-white ');
+        $(createButton).addClass('btn bg-primary text-white ');
         $(createButton)
             .attr('data-toggle', 'modal')
             .attr('type', 'button')
