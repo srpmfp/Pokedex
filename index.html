@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/styles.production.css" />
   </head>
   <body>
-    <header>
+    <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand text-primary" href="">Pokedex Menu</a>
@@ -34,12 +34,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
-                  >List</a
-                >
+                <a class="nav-link active" aria-current="page" href="./index.html">List</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Types</a>
@@ -57,9 +52,7 @@
                   aria-expanded="false">
                   Info
                 </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="#">Evolution</a></li>
                   <li><a class="dropdown-item" href="#">History</a></li>
                   <li>
@@ -83,11 +76,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -98,18 +87,17 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container bg-primary-subtle">
         <!-- Pokemon List container -->
         <div class="row">
-          <div class="col-3"></div>
+          <div class="col-2"></div>
           <ul
             id="pokemonList"
-            class="col-6 list-group d-flex flex-row justify-content-stretch flex-wrap w-50 bg-secondary h-25 flex-shrink-1"
+            class="col-10 list-group d-flex flex-row justify-content-stretch w-50 flex-wrap bg-secondary h-25 flex-shrink-1"
             aria-label="Pokemon List">
             <!-- pokemon List Items entered here-->
           </ul>
         </div>
-        <div class="col-3"></div>
       </div>
     </main>
     <script src="dist/promise-polyfill.dist.js"></script>

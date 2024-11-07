@@ -19,12 +19,12 @@ let pokemonRepository = (function () {
 
         // create new list element with BS class
         let createLi = document.createElement('li');
-        $(createLi).addClass('list-group-item border-0 bg-secondary ');
+        $(createLi).addClass('list-group-item border-0 bg-transparent p-1 m-auto');
 
 
         //  create new button element with BS classes for toggling modal
         let createButton = document.createElement('button');
-        $(createButton).addClass('btn bg-primary text-white ');
+        $(createButton).addClass('btn btn-success btn-subtle bg-grey-600 ');
         $(createButton)
             .attr('data-toggle', 'modal')
             .attr('type', 'button')
