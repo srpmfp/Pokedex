@@ -115,6 +115,7 @@ let pokemonRepository = (function () {
                     url: item.url
                 };
 
+
                 add(pokemon);
             });
 
@@ -149,13 +150,12 @@ let pokemonRepository = (function () {
     ////////////functions//////////////// 
     return {
 
-        add: add,
-        getAll: getAll,
+        get: getAll,
         showDetails: showDetails,
         addListItem: addListItem,
         loadDetails: loadDetails,
         loadList: loadList,
-        showModal: showModal,
+        showModal: showModal
 
     }
 
@@ -166,7 +166,7 @@ let pokemonRepository = (function () {
 // loads the pokemon into the table
 pokemonRepository.loadList().then(function (pokemon) {
 
-    pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.get().forEach(function (pokemon) {
         pokemonRepository.addListItem(pokemon);
 
     })
