@@ -40,6 +40,8 @@ Keyboard Accessibility
 
 ### Takeaways from project
 ---
-This gave a good <b>foundational experience </b> with the  <u>bootstrap library,</u> getting familiarized with its strengths and weaknesses. In returning to this project<br>
-it's nice to see how far making API calls and using CSS has progressed as a developer. Since I have leveraged React Bootstrap and Angular Materials I <br> 
+This gave a good <b>foundational experience </b> with the  <u>bootstrap library,</u> getting familiarized with its strengths and weaknesses. In returning to this project 
+<br>
+<br>
+It's nice to see how far making API calls and using CSS/Libraries has progressed as a developer. Since I have leveraged React Bootstrap and Angular Materials I
 feel confident and proud of the foundations this project set.
